@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/first"
+            android:checked="false"
+            android:icon="@drawable/ic_inbox_black"
+            android:title="@string/fifth_item" />
+
+        <item
+            android:id="@+id/second"
+            android:checked="false"
+            android:icon="@drawable/ic_star_black"
+            android:title="@string/second_item" />
+
+        <item
+            android:id="@+id/third"
+            android:checked="false"
+            android:icon="@drawable/ic_send_black"
+            android:title="@string/third_item" />
+
+        <item
+            android:id="@+id/fourth"
+            android:checked="false"
+            android:icon="@drawable/ic_drafts_black"
+            android:title="@string/fourth_item" />
+
+        <item
+            android:id="@+id/fifth"
+            android:checked="false"
+            android:icon="@drawable/ic_email_black"
+            android:title="@string/fifth_item" />
+
+        <item
+            android:id="@+id/sixth"
+            android:checked="false"
+            android:icon="@drawable/ic_delete_black"
+            android:title="@string/sixth_item" />
+
+        <item
+            android:id="@+id/seventh"
+            android:checked="false"
+            android:icon="@drawable/ic_error_black"
+            android:title="@string/seventh_item" />
+
+    </group>
+</menu>
