@@ -28,4 +28,5 @@ dependencies {
     compile 'com.nineoldandroids:library:2.4.+'
     compile 'me.relex:circleindicator:1.0.0@aar'
     compile 'com.beardedhen:androidbootstrap:+'
+    compile 'com.github.dmytrodanylyk.circular-progress-button:library:1.1.3'
 }

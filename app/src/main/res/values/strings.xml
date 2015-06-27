@@ -14,4 +14,7 @@
 
     <string name="closeDrawer">Navigation View</string>
     <string name="openDrawer">Navigation View Closed</string>
+
+    <string name="click">Click...</string>
+    <string name="start">Start...</string>
 </resources>
