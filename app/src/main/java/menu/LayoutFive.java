@@ -14,12 +14,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.beardedhen.androidbootstrap.BootstrapButton;
 import com.cm_smarthome.materialdesignsupportlibrary.MainActivity;
 import com.cm_smarthome.materialdesignsupportlibrary.R;
 
 public class LayoutFive extends Fragment {
     Sqlite sqlite;
-    private Button btnStart;
+    private BootstrapButton btnStart;
 
     public static LayoutFive newInstance() {
         LayoutFive fragment = new LayoutFive();
@@ -35,7 +36,7 @@ public class LayoutFive extends Fragment {
 
         sqlite = new Sqlite(getActivity());
 
-        btnStart = (Button) root.findViewById(R.id.btnStart);
+        btnStart = (BootstrapButton) root.findViewById(R.id.btnStart);
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
