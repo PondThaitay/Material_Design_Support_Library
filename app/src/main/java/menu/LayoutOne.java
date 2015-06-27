@@ -1,4 +1,4 @@
-package com.cm_smarthome.materialdesignsupportlibrary;
+package menu;
 
 /**
  * Created by AdminPond on 21/6/2558.
@@ -10,19 +10,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class LayoutThree extends Fragment {
+import com.cm_smarthome.materialdesignsupportlibrary.R;
 
-    public static LayoutThree newInstance() {
-        LayoutThree fragment = new LayoutThree();
+public class LayoutOne extends Fragment {
+
+    public static LayoutOne newInstance() {
+        LayoutOne fragment = new LayoutOne();
         return fragment;
     }
 
-    public LayoutThree() {
+    public LayoutOne() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.layout_three, null);
+        View root = inflater.inflate(R.layout.layout_one, null);
         return root;
     }
 }

@@ -1,10 +1,13 @@
-package com.cm_smarthome.materialdesignsupportlibrary;
+package menu;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+
+import com.cm_smarthome.materialdesignsupportlibrary.MainActivity;
+import com.cm_smarthome.materialdesignsupportlibrary.R;
 
 import me.relex.circleindicator.CircleIndicator;
 

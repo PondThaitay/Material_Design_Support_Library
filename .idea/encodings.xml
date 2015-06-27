@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/cm_smarthome/materialdesignsupportlibrary/LayoutFive.java" charset="x-windows-874" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/cm_smarthome/materialdesignsupportlibrary/LayoutFour.java" charset="x-windows-874" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/cm_smarthome/materialdesignsupportlibrary/LayoutOne.java" charset="x-windows-874" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/cm_smarthome/materialdesignsupportlibrary/LayoutThree.java" charset="x-windows-874" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/cm_smarthome/materialdesignsupportlibrary/LayoutTwo.java" charset="x-windows-874" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/cm_smarthome/materialdesignsupportlibrary/MainActivity.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/cm_smarthome/materialdesignsupportlibrary/MyPageAdapter.java" charset="x-windows-874" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/cm_smarthome/materialdesignsupportlibrary/Sqlite.java" charset="x-windows-874" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/menu/LayoutFive.java" charset="x-windows-874" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/menu/LayoutFour.java" charset="x-windows-874" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/menu/LayoutOne.java" charset="x-windows-874" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/menu/LayoutThree.java" charset="x-windows-874" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/menu/LayoutTwo.java" charset="x-windows-874" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/menu/MyPageAdapter.java" charset="x-windows-874" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/menu/Sqlite.java" charset="x-windows-874" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/layout_five.xml" charset="x-windows-874" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/layout_four.xml" charset="x-windows-874" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/layout_one.xml" charset="x-windows-874" />

@@ -1,4 +1,4 @@
-package com.cm_smarthome.materialdesignsupportlibrary;
+package menu;
 
 /**
  * Created by AdminPond on 21/6/2558.
@@ -9,6 +9,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.cm_smarthome.materialdesignsupportlibrary.R;
 
 public class LayoutFour extends Fragment {
 

@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainCirclepage"
+            android:name="menu.MainCirclepage"
             android:label="@string/app_name"
             android:theme="@style/AppThemeCircle">
             <intent-filter>

@@ -1,4 +1,4 @@
-package com.cm_smarthome.materialdesignsupportlibrary;
+package menu;
 
 /**
  * Created by AdminPond on 21/6/2558.
@@ -13,6 +13,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.cm_smarthome.materialdesignsupportlibrary.MainActivity;
+import com.cm_smarthome.materialdesignsupportlibrary.R;
 
 public class LayoutFive extends Fragment {
     Sqlite sqlite;
