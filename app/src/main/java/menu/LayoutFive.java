@@ -19,6 +19,8 @@ import com.cm_smarthome.materialdesignsupportlibrary.MainActivity;
 import com.cm_smarthome.materialdesignsupportlibrary.R;
 import com.dd.CircularProgressButton;
 
+import login.Login_activity;
+
 public class LayoutFive extends Fragment {
     Sqlite sqlite;
     private BootstrapButton btnStart;
@@ -60,7 +62,7 @@ public class LayoutFive extends Fragment {
                 } else {
                     String[] arrData = sqlite.SelectData("1");
                     Log.e("Flag", arrData[1]);
-                    Intent intent = new Intent(getActivity(), MainActivity.class);
+                    Intent intent = new Intent(getActivity(), Login_activity.class);
                     startActivity(intent);
                 }
             }

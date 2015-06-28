@@ -9,6 +9,7 @@ import android.support.v4.view.ViewPager;
 import com.cm_smarthome.materialdesignsupportlibrary.MainActivity;
 import com.cm_smarthome.materialdesignsupportlibrary.R;
 
+import login.Login_activity;
 import me.relex.circleindicator.CircleIndicator;
 
 /**
@@ -31,7 +32,7 @@ public class MainCirclepage extends FragmentActivity {
         if (arrData[0].length() > 0) {
             String Flag = arrData[1];
             if (Flag.equals("1")) {
-                Intent intent = new Intent(context, MainActivity.class);
+                Intent intent = new Intent(context, Login_activity.class);
                 startActivity(intent);
             }
         }

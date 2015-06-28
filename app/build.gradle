@@ -29,4 +29,6 @@ dependencies {
     compile 'me.relex:circleindicator:1.0.0@aar'
     compile 'com.beardedhen:androidbootstrap:+'
     compile 'com.github.dmytrodanylyk.circular-progress-button:library:1.1.3'
+    compile 'com.facebook.android:facebook-android-sdk:3.23.1'
+    compile 'com.squareup.picasso:picasso:2.5.2'
 }

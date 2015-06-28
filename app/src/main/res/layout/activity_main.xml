@@ -28,8 +28,8 @@
                 android:layout_gravity="bottom|right"
                 android:layout_marginBottom="@dimen/codelab_fab_margin_bottom"
                 android:layout_marginRight="@dimen/codelab_fab_margin_right"
-                android:src="@drawable/ic_plus"
-                app:backgroundTint="@android:color/holo_red_light"
+                android:src="@drawable/ic_action_share"
+                app:backgroundTint="@color/PrimaryColor"
                 app:fabSize="normal" />
         </FrameLayout>
     </LinearLayout>
