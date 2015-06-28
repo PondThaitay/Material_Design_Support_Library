@@ -1,38 +1,25 @@
 package login;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
-import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.location.Location;
-import android.location.LocationManager;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
+import com.beardedhen.androidbootstrap.BootstrapButton;
+import com.cm_smarthome.materialdesignsupportlibrary.MainActivity;
 import com.cm_smarthome.materialdesignsupportlibrary.R;
-import com.facebook.Request;
-import com.facebook.Response;
 import com.facebook.Session;
 import com.facebook.SessionState;
 import com.facebook.UiLifecycleHelper;
 import com.facebook.model.GraphUser;
 import com.facebook.widget.LoginButton;
-import com.facebook.widget.ProfilePictureView;
-import com.squareup.picasso.Picasso;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -42,7 +29,7 @@ import java.util.List;
 /**
  * Created by AdminPond on 28/6/2558.
  */
-public class Login_activity extends FragmentActivity {
+public class Login_activity extends AppCompatActivity {
 
     Context context = this;
 
@@ -50,12 +37,18 @@ public class Login_activity extends FragmentActivity {
 
     private UiLifecycleHelper uiHelper;
 
+    private BootstrapButton btnStart;
+    private Toolbar mToolbar;
+
     private static final List<String> PERMISSIONS = Arrays.asList("publish_actions");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
+
+        mToolbar = (Toolbar) findViewById(R.id.toolbar_login);
+        setSupportActionBar(mToolbar);
 
         // Add code to print out the key hash
         try {
@@ -72,6 +65,15 @@ public class Login_activity extends FragmentActivity {
         } catch (NoSuchAlgorithmException e) {
 
         }
+
+        btnStart = (BootstrapButton) findViewById(R.id.btnStart);
+        btnStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
         uiHelper = new UiLifecycleHelper(this, statusCallback);
         uiHelper.onCreate(savedInstanceState);
