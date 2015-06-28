@@ -35,7 +35,9 @@ public class Sqlite extends SQLiteOpenHelper {
 
         db.execSQL("CREATE TABLE " + TABLE_NAME +
                 "(MemberID INTEGER PRIMARY KEY," +
-                " Flag TEXT(2));");
+                " Flag TEXT(2)," +
+                " Flag_lg TEXT(2)," +
+                " Flag_login TEXT(2));");
 
         Log.d("CREATE TABLE", "Create Table Successfully.");
     }
@@ -58,6 +60,8 @@ public class Sqlite extends SQLiteOpenHelper {
             ContentValues Val = new ContentValues();
             Val.put("MemberID", "1");
             Val.put("Flag", "0");
+            Val.put("Flag_login", "0");
+            Val.put("Flag_lg", "0");
 
             long rows = db.insert(TABLE_NAME, null, Val);
 
@@ -87,6 +91,8 @@ public class Sqlite extends SQLiteOpenHelper {
                     arrData = new String[cursor.getColumnCount()];
                     arrData[0] = cursor.getString(0);
                     arrData[1] = cursor.getString(1);
+                    arrData[2] = cursor.getString(2);
+                    arrData[3] = cursor.getString(3);
                 }
             }
             cursor.close();
@@ -109,6 +115,52 @@ public class Sqlite extends SQLiteOpenHelper {
 
             ContentValues Val = new ContentValues();
             Val.put("Flag", strFlag);
+
+            long rows = db.update(TABLE_NAME, Val, " MemberID = ?",
+                    new String[]{String.valueOf(strMemberID)});
+
+            db.close();
+            return rows; // return rows updated.
+
+        } catch (Exception e) {
+            return -1;
+        }
+    }
+
+    // Update Data(Flag_login)
+    public long UpdateDataFlagLogin(String strMemberID, String strFlag) {
+        // TODO Auto-generated method stub
+
+        try {
+
+            SQLiteDatabase db;
+            db = this.getWritableDatabase(); // Write Data
+
+            ContentValues Val = new ContentValues();
+            Val.put("Flag_login", strFlag);
+
+            long rows = db.update(TABLE_NAME, Val, " MemberID = ?",
+                    new String[]{String.valueOf(strMemberID)});
+
+            db.close();
+            return rows; // return rows updated.
+
+        } catch (Exception e) {
+            return -1;
+        }
+    }
+
+    // Update Data(Flag_login)
+    public long UpdateDataFlagLg(String strMemberID, String strFlag) {
+        // TODO Auto-generated method stub
+
+        try {
+
+            SQLiteDatabase db;
+            db = this.getWritableDatabase(); // Write Data
+
+            ContentValues Val = new ContentValues();
+            Val.put("Flag_lg", strFlag);
 
             long rows = db.update(TABLE_NAME, Val, " MemberID = ?",
                     new String[]{String.valueOf(strMemberID)});

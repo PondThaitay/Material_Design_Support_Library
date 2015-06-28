@@ -31,7 +31,12 @@ public class MainCirclepage extends FragmentActivity {
         String[] arrData = sqlite.SelectData("1");
         if (arrData[0].length() > 0) {
             String Flag = arrData[1];
-            if (Flag.equals("1")) {
+            String Flag1 = arrData[2];
+            if (Flag.equals("1") && Flag1.equals("1")) {
+                Intent intent = new Intent(context, MainActivity.class);
+                startActivity(intent);
+            }
+            else if (Flag.equals("1") && Flag1.equals("0")) {
                 Intent intent = new Intent(context, Login_activity.class);
                 startActivity(intent);
             }

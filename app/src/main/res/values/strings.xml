@@ -10,7 +10,7 @@
     <string name="fourth_item">Fourth_Layout</string>
     <string name="fifth_item">Fifth_Layout</string>
     <string name="sixth_item">Sixth_Layout</string>
-    <string name="seventh_item">Seventh_Layout</string>
+    <string name="seventh_item">Log out</string>
 
     <string name="closeDrawer">Navigation View</string>
     <string name="openDrawer">Navigation View Closed</string>

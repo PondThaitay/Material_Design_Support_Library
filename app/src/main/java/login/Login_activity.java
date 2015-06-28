@@ -1,10 +1,12 @@
 package login;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -21,10 +23,21 @@ import com.facebook.UiLifecycleHelper;
 import com.facebook.model.GraphUser;
 import com.facebook.widget.LoginButton;
 
+import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.protocol.HTTP;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import menu.Sqlite;
 
 /**
  * Created by AdminPond on 28/6/2558.
@@ -32,6 +45,9 @@ import java.util.List;
 public class Login_activity extends AppCompatActivity {
 
     Context context = this;
+    Sqlite sqlite = new Sqlite(context);
+
+    private ProgressDialog progressDialog;
 
     private LoginButton loginBtn;
 
@@ -40,8 +56,6 @@ public class Login_activity extends AppCompatActivity {
     private BootstrapButton btnStart;
     private Toolbar mToolbar;
 
-    private static final List<String> PERMISSIONS = Arrays.asList("publish_actions");
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,22 +63,6 @@ public class Login_activity extends AppCompatActivity {
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar_login);
         setSupportActionBar(mToolbar);
-
-        // Add code to print out the key hash
-        try {
-            PackageInfo info = getPackageManager().getPackageInfo(
-                    "com.cm_smarthome.materialdesignsupportlibrary",
-                    PackageManager.GET_SIGNATURES);
-            for (Signature signature : info.signatures) {
-                MessageDigest md = MessageDigest.getInstance("SHA");
-                md.update(signature.toByteArray());
-                Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
-            }
-        } catch (PackageManager.NameNotFoundException e) {
-
-        } catch (NoSuchAlgorithmException e) {
-
-        }
 
         btnStart = (BootstrapButton) findViewById(R.id.btnStart);
         btnStart.setOnClickListener(new View.OnClickListener() {
@@ -83,9 +81,11 @@ public class Login_activity extends AppCompatActivity {
             @Override
             public void onUserInfoFetched(GraphUser user) {
                 if (user != null) {
-
+                    sqlite.UpdateDataFlagLogin("1", "1");
+                    Intent intent = new Intent(context, MainActivity.class);
+                    startActivity(intent);
                 } else {
-
+                    //Toast.makeText(context, "Error...", Toast.LENGTH_SHORT).show();
                 }
             }
         });
