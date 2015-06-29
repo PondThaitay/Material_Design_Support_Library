@@ -21,7 +21,7 @@ public class LayoutTwo extends Fragment {
 
     public LayoutTwo() {
     }
-    
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.layout_two, null);

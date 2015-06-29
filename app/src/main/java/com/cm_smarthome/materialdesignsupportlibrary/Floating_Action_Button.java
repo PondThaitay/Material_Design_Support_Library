@@ -15,7 +15,7 @@ public class Floating_Action_Button extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.floating_action_button,container,false);
+        View v = inflater.inflate(R.layout.floating_action_button, container, false);
         return v;
     }
 }

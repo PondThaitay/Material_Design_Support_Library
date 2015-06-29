@@ -32,12 +32,26 @@ public class Seventh_Fragment extends Fragment {
         sqlite = new Sqlite(getActivity());
         sqlite.UpdateDataFlagLogin("1", "0");
 
-        Session session = Session.getActiveSession();
-        session.closeAndClearTokenInformation();
+        String[] arrData = sqlite.SelectData("1");
+
+        if (arrData[0].length() > 0) {
+            Log.e("Flag Logout", arrData[1] + "+" + arrData[3]);
+        }
 
         Intent intent = new Intent(getActivity(), Login_activity.class);
+        intent.putExtra("State", "out");
         startActivity(intent);
 
         return v;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        sqlite.UpdateDataFlagLogin("1", "1");
+        String[] arrData = sqlite.SelectData("1");
+        if (arrData[0].length() > 0) {
+            Log.e("Flag Logout1", arrData[1] + "+" + arrData[2]);
+        }
     }
 }

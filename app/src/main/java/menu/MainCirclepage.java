@@ -5,8 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 
-import com.cm_smarthome.materialdesignsupportlibrary.MainActivity;
 import com.cm_smarthome.materialdesignsupportlibrary.R;
 
 import login.Login_activity;
@@ -31,14 +31,21 @@ public class MainCirclepage extends FragmentActivity {
         String[] arrData = sqlite.SelectData("1");
         if (arrData[0].length() > 0) {
             String Flag = arrData[1];
-            String Flag1 = arrData[2];
-            if (Flag.equals("1") && Flag1.equals("1")) {
-                Intent intent = new Intent(context, MainActivity.class);
-                startActivity(intent);
-            }
-            else if (Flag.equals("1") && Flag1.equals("0")) {
+            String Flag1 = arrData[3];
+            Log.e("Flag", arrData[1] + "+" + arrData[3]);
+            if (Flag.equals("1") && Flag1.equals("0")) {
                 Intent intent = new Intent(context, Login_activity.class);
+                intent.putExtra("State", "new");
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
+                //String[] arrData = sqlite.SelectData("1");
+                Log.e("Flag", arrData[1] + "+" + arrData[3]);
+            } else if (Flag.equals("1") && Flag1.equals("1")) {
+                Intent intent = new Intent(context, Login_activity.class);
+                intent.putExtra("State", "check");
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                Log.e("Flag", arrData[1] + "+" + arrData[2]);
             }
         }
 

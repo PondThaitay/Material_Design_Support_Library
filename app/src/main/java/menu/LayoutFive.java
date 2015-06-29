@@ -63,6 +63,8 @@ public class LayoutFive extends Fragment {
                     String[] arrData = sqlite.SelectData("1");
                     Log.e("Flag", arrData[1]);
                     Intent intent = new Intent(getActivity(), Login_activity.class);
+                    intent.putExtra("State", "new");
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }
             }

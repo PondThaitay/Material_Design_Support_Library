@@ -1,9 +1,5 @@
 package menu;
 
-/**
- * Created by AdminPond on 21/6/2558.
- */
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;

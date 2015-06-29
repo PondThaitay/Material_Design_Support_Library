@@ -1,6 +1,7 @@
 package com.cm_smarthome.materialdesignsupportlibrary;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -20,6 +21,25 @@ public class MainActivity extends AppCompatActivity {
     private FloatingActionButton fabBtn;
 
     Context context = this;
+
+    private boolean Count = false;
+
+    @Override
+    public void onBackPressed() {
+        if (Count) {
+            super.onBackPressed();
+            android.os.Process.killProcess(android.os.Process.myPid());
+            return;
+        }
+        Count = true;
+        Toast.makeText(context, "Press Again to Exit..", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onResume() {
+        Count = false;
+        super.onResume();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
