@@ -74,7 +74,7 @@ public class Login_activity extends AppCompatActivity {
                     public void onUserInfoFetched(GraphUser user) {
                         if (user != null) {
                             MyAsyncTaskClickLoginFacebook loginFacebook = new MyAsyncTaskClickLoginFacebook();
-                            loginFacebook.execute();
+                            loginFacebook.execute(user.getId(), user.getName());
                         } else {
                             Log.e("Login", "No User");
                         }
@@ -141,7 +141,6 @@ public class Login_activity extends AppCompatActivity {
             @Override
             public void call(Session session, SessionState state, Exception exception) {
                 if (session.isOpened()) {
-
                     // make request to the /me API
                     Request.executeMeRequestAsync(session, new Request.GraphUserCallback() {
 
@@ -156,6 +155,8 @@ public class Login_activity extends AppCompatActivity {
                                 System.out.println(user.getLocation());
                                 System.out.println("facebook user id" + user.getId());
                                 Intent intent = new Intent(context, MainActivity.class);
+                                intent.putExtra("user_id", user.getId());
+                                intent.putExtra("name", user.getName());
                                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
                             }
@@ -178,6 +179,8 @@ public class Login_activity extends AppCompatActivity {
                     Log.e("Flag Logout1", arrData[1] + "+" + arrData[3]);
                 }
                 Intent intent = new Intent(context, MainActivity.class);
+                intent.putExtra("user_id", params[0]);
+                intent.putExtra("name", params[1]);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
 

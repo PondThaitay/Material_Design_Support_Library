@@ -11,7 +11,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
     private FloatingActionButton fabBtn;
+    TextView tvEmail;
+    TextView tvName;
+    CircleImageView circleImageViewProfile;
 
     Context context = this;
 
@@ -46,8 +54,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        String name = getIntent().getStringExtra("name");
+        String user_id = getIntent().getStringExtra("user_id");
+
+
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        tvEmail = (TextView) findViewById(R.id.email);
+        tvEmail.setText("by PondThaiTay");
+
+        tvName = (TextView) findViewById(R.id.username);
+        tvName.setText(name);
+
+        circleImageViewProfile = (CircleImageView) findViewById(R.id.profile_image);
+
+        Picasso.with(context).load("https://graph.facebook.com/" + user_id + "/picture?type=large")
+                .into(circleImageViewProfile);
 
         First_Fragment fragment = new First_Fragment();
         android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -113,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
                         fragmentTransaction5.commit();
                         return true;
                     case R.id.seventh:
-                        Toast.makeText(getApplicationContext(), "Seventh Selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Exit...", Toast.LENGTH_SHORT).show();
                         Seventh_Fragment seventh_fragment = new Seventh_Fragment();
                         android.support.v4.app.FragmentTransaction fragmentTransaction6 = getSupportFragmentManager().beginTransaction();
                         fragmentTransaction6.replace(R.id.frame, seventh_fragment);
